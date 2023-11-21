@@ -348,3 +348,12 @@ class DataObject():
             return "Float"
         else:
             return "String"
+        
+
+# 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
+
+# 
+# git remote add origin https://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@github.com/Gaoretelelwe/ClassGenerator
+# git push -u origin master
+
+
