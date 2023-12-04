@@ -153,7 +153,7 @@ class Session():
 		if self.IsDeleted:
 			raise FetchError('The Session is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, SessionId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.SessionId == self.SessionId)
 			result = self.data_access.connection.execute(s)
@@ -195,14 +195,14 @@ class Session():
 		if self.IsDeleted:
 			raise FetchError('The Session is deleted.')
 
-	def _db_fetch_guid(self):
+	def _db_fetch_guid(self, SessionGuid):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.SessionGuid == self.SessionGuid)
 			result = self.data_access.connection.execute(s)
 			row = result.first()
 
 			if row == None:
-				raise FetchError('The Session does not exist. Session Guid is {0}.'.format(str(SessionId)))
+				raise FetchError('The Session does not exist. Session Guid is {0}.'.format(str(SessionGuid)))
 			else:
 				#Get results and assign them to class variables
 

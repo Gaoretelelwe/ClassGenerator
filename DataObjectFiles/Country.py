@@ -83,7 +83,7 @@ class Country():
 		if self.IsDeleted:
 			raise FetchError('The Country is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, CountryId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.CountryId == self.CountryId)
 			result = self.data_access.connection.execute(s)

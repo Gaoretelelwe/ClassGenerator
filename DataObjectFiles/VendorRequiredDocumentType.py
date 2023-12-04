@@ -83,7 +83,7 @@ class VendorRequiredDocumentType():
 		if self.IsDeleted:
 			raise FetchError('The VendorRequiredDocumentType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorRequiredDocumentTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorRequiredDocumentTypeId == self.VendorRequiredDocumentTypeId)
 			result = self.data_access.connection.execute(s)

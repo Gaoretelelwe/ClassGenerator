@@ -78,7 +78,7 @@ class PersonType():
 		if self.IsDeleted:
 			raise FetchError('The PersonType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, PersonTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.PersonTypeId == self.PersonTypeId)
 			result = self.data_access.connection.execute(s)

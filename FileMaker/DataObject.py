@@ -226,7 +226,7 @@ class DataObject():
         ObjectFile.write("\n")
 
     def WriteDBFetchMethod(self, ObjectFile):
-        ObjectFile.write("\tdef _db_fetch(self):\n")
+        ObjectFile.write("\tdef _db_fetch(self, " + self.Name + "Id):\n")
         
         ObjectFile.write("\t\tif not self.IsFetched:\n")
 
@@ -253,7 +253,7 @@ class DataObject():
         ObjectFile.write("\n")
 
     def WriteDBFetchGuidMethod(self, ObjectFile):
-        ObjectFile.write("\tdef _db_fetch_guid(self):\n")
+        ObjectFile.write("\tdef _db_fetch_guid(self, " + self.Name + "Guid):\n")
         
         ObjectFile.write("\t\tif not self.IsFetched:\n")
 
@@ -264,7 +264,7 @@ class DataObject():
         ObjectFile.write("\t\t\trow = result.first()\n\n")
 
         ObjectFile.write("\t\t\tif row == None:\n")
-        ObjectFile.write("\t\t\t\traise FetchError('The " + self.Name + " does not exist. " + self.Name + " Guid is {0}.'.format(str(" + self.Name + "Id)))\n")
+        ObjectFile.write("\t\t\t\traise FetchError('The " + self.Name + " does not exist. " + self.Name + " Guid is {0}.'.format(str(" + self.Name + "Guid)))\n")
         ObjectFile.write("\t\t\telse:\n")
         ObjectFile.write("\t\t\t\t#Get results and assign them to class variables\n\n")
 
@@ -349,11 +349,4 @@ class DataObject():
         else:
             return "String"
         
-
-# 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
-
-# 
-# git remote add origin https://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@github.com/Gaoretelelwe/ClassGenerator
-# git push -u origin master
-
 

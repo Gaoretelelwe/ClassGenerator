@@ -112,7 +112,7 @@ class RFQ():
 		if self.IsDeleted:
 			raise FetchError('The RFQ is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, RFQId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.RFQId == self.RFQId)
 			result = self.data_access.connection.execute(s)

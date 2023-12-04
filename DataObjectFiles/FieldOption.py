@@ -78,7 +78,7 @@ class FieldOption():
 		if self.IsDeleted:
 			raise FetchError('The FieldOption is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, FieldOptionId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.FieldOptionId == self.FieldOptionId)
 			result = self.data_access.connection.execute(s)

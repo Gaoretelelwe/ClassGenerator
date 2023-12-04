@@ -78,7 +78,7 @@ class CoreBusiness():
 		if self.IsDeleted:
 			raise FetchError('The CoreBusiness is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, CoreBusinessId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.CoreBusinessId == self.CoreBusinessId)
 			result = self.data_access.connection.execute(s)

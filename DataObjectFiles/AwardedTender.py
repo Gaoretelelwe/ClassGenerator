@@ -88,7 +88,7 @@ class AwardedTender():
 		if self.IsDeleted:
 			raise FetchError('The AwardedTender is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AwardedTenderId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AwardedTenderId == self.AwardedTenderId)
 			result = self.data_access.connection.execute(s)

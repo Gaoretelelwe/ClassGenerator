@@ -83,7 +83,7 @@ class AdministratorTender():
 		if self.IsDeleted:
 			raise FetchError('The AdministratorTender is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AdministratorTenderId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AdministratorTenderId == self.AdministratorTenderId)
 			result = self.data_access.connection.execute(s)

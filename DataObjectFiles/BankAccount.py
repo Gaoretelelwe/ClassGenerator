@@ -93,7 +93,7 @@ class BankAccount():
 		if self.IsDeleted:
 			raise FetchError('The BankAccount is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, BankAccountId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.BankAccountId == self.BankAccountId)
 			result = self.data_access.connection.execute(s)

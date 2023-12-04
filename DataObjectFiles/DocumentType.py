@@ -80,7 +80,7 @@ class DocumentType():
 		if self.IsDeleted:
 			raise FetchError('The DocumentType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, DocumentTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.DocumentTypeId == self.DocumentTypeId)
 			result = self.data_access.connection.execute(s)

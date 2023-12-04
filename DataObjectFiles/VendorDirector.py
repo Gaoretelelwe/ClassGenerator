@@ -88,7 +88,7 @@ class VendorDirector():
 		if self.IsDeleted:
 			raise FetchError('The VendorDirector is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorDirectorId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorDirectorId == self.VendorDirectorId)
 			result = self.data_access.connection.execute(s)

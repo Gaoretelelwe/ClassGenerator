@@ -83,7 +83,7 @@ class VendorTenderSubmissionDocument():
 		if self.IsDeleted:
 			raise FetchError('The VendorTenderSubmissionDocument is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorTenderSubmissionDocumentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorTenderSubmissionDocumentId == self.VendorTenderSubmissionDocumentId)
 			result = self.data_access.connection.execute(s)

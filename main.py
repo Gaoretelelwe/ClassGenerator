@@ -44,7 +44,7 @@ def generateObjects(username: str,
         table_name = table[0]
         cursor.execute("""SELECT COLUMN_NAME, COLUMN_TYPE, DATA_TYPE, COLUMN_KEY, IS_NULLABLE FROM information_schema.columns
                           WHERE table_schema = '""" + database + """'
-                             AND table_name = '""" + table_name + """';""")
+                             AND table_name = '""" + table_name + """' ORDER BY ORDINAL_POSITION;""")
 
         # 1.) Get all fields with their metadata,
         columns = cursor.fetchall()

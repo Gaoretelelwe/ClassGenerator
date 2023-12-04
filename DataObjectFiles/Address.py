@@ -90,7 +90,7 @@ class Address():
 		if self.IsDeleted:
 			raise FetchError('The Address is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AddressId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AddressId == self.AddressId)
 			result = self.data_access.connection.execute(s)

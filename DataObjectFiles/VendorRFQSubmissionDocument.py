@@ -83,7 +83,7 @@ class VendorRFQSubmissionDocument():
 		if self.IsDeleted:
 			raise FetchError('The VendorRFQSubmissionDocument is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorRFQSubmissionDocumentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorRFQSubmissionDocumentId == self.VendorRFQSubmissionDocumentId)
 			result = self.data_access.connection.execute(s)

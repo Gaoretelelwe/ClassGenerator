@@ -100,7 +100,7 @@ class Administrator():
 		if self.IsDeleted:
 			raise FetchError('The Administrator is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AdministratorId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AdministratorId == self.AdministratorId)
 			result = self.data_access.connection.execute(s)

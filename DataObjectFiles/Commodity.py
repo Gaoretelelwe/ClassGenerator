@@ -75,7 +75,7 @@ class Commodity():
 		if self.IsDeleted:
 			raise FetchError('The Commodity is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, CommodityId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.CommodityId == self.CommodityId)
 			result = self.data_access.connection.execute(s)

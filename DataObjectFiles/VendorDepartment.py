@@ -88,7 +88,7 @@ class VendorDepartment():
 		if self.IsDeleted:
 			raise FetchError('The VendorDepartment is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorDepartmentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorDepartmentId == self.VendorDepartmentId)
 			result = self.data_access.connection.execute(s)

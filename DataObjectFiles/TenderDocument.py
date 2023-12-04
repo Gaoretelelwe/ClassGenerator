@@ -83,7 +83,7 @@ class TenderDocument():
 		if self.IsDeleted:
 			raise FetchError('The TenderDocument is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, TenderDocumentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.TenderDocumentId == self.TenderDocumentId)
 			result = self.data_access.connection.execute(s)

@@ -98,7 +98,7 @@ class Document():
 		if self.IsDeleted:
 			raise FetchError('The Document is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, DocumentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.DocumentId == self.DocumentId)
 			result = self.data_access.connection.execute(s)

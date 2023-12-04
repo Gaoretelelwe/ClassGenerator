@@ -78,7 +78,7 @@ class AddressType():
 		if self.IsDeleted:
 			raise FetchError('The AddressType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AddressTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AddressTypeId == self.AddressTypeId)
 			result = self.data_access.connection.execute(s)

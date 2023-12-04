@@ -78,7 +78,7 @@ class Entity():
 		if self.IsDeleted:
 			raise FetchError('The Entity is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, EntityId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.EntityId == self.EntityId)
 			result = self.data_access.connection.execute(s)

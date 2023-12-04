@@ -83,7 +83,7 @@ class VendorType():
 		if self.IsDeleted:
 			raise FetchError('The VendorType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorTypeId == self.VendorTypeId)
 			result = self.data_access.connection.execute(s)

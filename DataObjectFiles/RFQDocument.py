@@ -83,7 +83,7 @@ class RFQDocument():
 		if self.IsDeleted:
 			raise FetchError('The RFQDocument is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, RFQDocumentId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.RFQDocumentId == self.RFQDocumentId)
 			result = self.data_access.connection.execute(s)

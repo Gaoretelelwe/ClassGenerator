@@ -83,7 +83,7 @@ class AdministratorRFQ():
 		if self.IsDeleted:
 			raise FetchError('The AdministratorRFQ is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AdministratorRFQId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AdministratorRFQId == self.AdministratorRFQId)
 			result = self.data_access.connection.execute(s)

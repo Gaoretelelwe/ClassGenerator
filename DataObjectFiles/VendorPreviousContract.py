@@ -105,7 +105,7 @@ class VendorPreviousContract():
 		if self.IsDeleted:
 			raise FetchError('The VendorPreviousContract is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorPreviousContractId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorPreviousContractId == self.VendorPreviousContractId)
 			result = self.data_access.connection.execute(s)

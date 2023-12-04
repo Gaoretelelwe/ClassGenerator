@@ -83,7 +83,7 @@ class VendorCommodity():
 		if self.IsDeleted:
 			raise FetchError('The VendorCommodity is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, VendorCommodityId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.VendorCommodityId == self.VendorCommodityId)
 			result = self.data_access.connection.execute(s)

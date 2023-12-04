@@ -104,7 +104,7 @@ class TenderNotification():
 		if self.IsDeleted:
 			raise FetchError('The TenderNotification is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, TenderNotificationId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.TenderNotificationId == self.TenderNotificationId)
 			result = self.data_access.connection.execute(s)

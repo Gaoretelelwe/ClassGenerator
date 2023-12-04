@@ -78,7 +78,7 @@ class DepartmentType():
 		if self.IsDeleted:
 			raise FetchError('The DepartmentType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, DepartmentTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.DepartmentTypeId == self.DepartmentTypeId)
 			result = self.data_access.connection.execute(s)

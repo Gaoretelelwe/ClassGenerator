@@ -78,7 +78,7 @@ class AccountType():
 		if self.IsDeleted:
 			raise FetchError('The AccountType is deleted.')
 
-	def _db_fetch(self):
+	def _db_fetch(self, AccountTypeId):
 		if not self.IsFetched:
 			s = self.content.select().where(self.content.c.AccountTypeId == self.AccountTypeId)
 			result = self.data_access.connection.execute(s)
