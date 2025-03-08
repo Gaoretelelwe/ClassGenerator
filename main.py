@@ -29,6 +29,7 @@ def generateObjects(username: str,
                              Database = database)
     
     # python main.py generateobjects boyghtdq_boyghtdq V3nd0R9uy cp-15.hkdns.co.za 3306 boyghtdq_Muuzaji_Demo testing
+    # python main.py generateobjects boyghtdq_boyghtdq V3nd0R9uy cp-15.hkdns.co.za 3306 boyghtdq_je_app DataObjectFiles
 
     # Connect to Database
     cursor = data_access.raw_connection.cursor()
