@@ -15,22 +15,22 @@ def goodbye(name: str, formal: bool = False):
     else:
         print(f"Bye {name}!")
 
+
+
 @app.command()
 def generateObjects(username: str, 
                     password: str, 
                     host: str, 
                     port: str, 
-                    database: str, 
-                    destination: str):
+                    database: str,
+                    destination: str): 
+                    
     data_access = DataAccess(Username = username, 
                              Password = password, 
                              Host = host, 
                              Port = port, 
                              Database = database)
     
-    # python main.py generateobjects boyghtdq_boyghtdq V3nd0R9uy cp-15.hkdns.co.za 3306 boyghtdq_Muuzaji_Demo testing
-    # python main.py generateobjects boyghtdq_boyghtdq V3nd0R9uy cp-15.hkdns.co.za 3306 boyghtdq_je_app DataObjectFiles
-
     # Connect to Database
     cursor = data_access.raw_connection.cursor()
     cursor.execute("""SELECT TABLE_NAME FROM information_schema.tables

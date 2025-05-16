@@ -159,11 +159,11 @@ class DataObject():
         ObjectFile.write("\n")
 
         ObjectFile.write("\t\tif self.IsInserted:\n")
-        ObjectFile.write("\t\t\traise InsertError('The " + self.Name + " is deleted.')\n")
+        ObjectFile.write("\t\t\traise InsertError('The " + self.Name + " is inserted.')\n")
         ObjectFile.write("\n")
 
         ObjectFile.write("\t\tif self.IsUpdated:\n")
-        ObjectFile.write("\t\t\traise InsertError('The " + self.Name + " is deleted.')\n")
+        ObjectFile.write("\t\t\traise InsertError('The " + self.Name + " is updated.')\n")
         ObjectFile.write("\n")
 
         for column in self.Columns:
