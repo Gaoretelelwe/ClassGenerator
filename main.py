@@ -16,6 +16,12 @@ def goodbye(name: str, formal: bool = False):
         print(f"Bye {name}!")
 
 
+'''
+
+python main.py generateobjects root CvyQqGGS2XSatrYBrT 103.252.117.180 3306 ToastlyDev CouncilApp
+
+'''
+
 
 @app.command()
 def generateObjects(username: str, 

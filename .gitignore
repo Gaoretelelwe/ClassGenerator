@@ -1,0 +1,23 @@
+# Ignore below file(s)
+.env
+
+
+# Ignore below folder(s)
+.VSCodeCounter
+.vscode
+
+# To ignore a specific file
+# -- filename.extension
+
+# To ingore all files ending with a specific extension
+# -- *.extension
+
+
+# Removing folder from git but keeping it on local machine
+# -- git rm -r --cached myFolder
+
+
+# Removing folder from git and from local
+# -- git rm -r one-of-the-directories // This deletes from filesystem
+# -- git commit . -m "Remove duplicated directory"
+# -- git push origin <your-git-branch> (typically 'master', but not always)
